@@ -1,1 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruang Quotes</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#0f1117;
+color:#e6e6e6;
+line-height:1.6;
+}
+
+section{
+padding:80px 10%;
+text-align:center;
+}
+
+h1,h2{
+font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+max-width:700px;
+margin:auto;
+}
+
+.hero p{
+opacity:0.7;
+margin-top:15px;
+}
+
+/* QUOTE CARD */
+
+.quote-card{
+margin-top:50px;
+background:#171a22;
+padding:40px;
+border-radius:18px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+transition:0.3s;
+}
+
+.quote-text{
+font-size:18px;
+font-style:italic;
+opacity:0.9;
+}
+
+.quote-author{
+margin-top:15px;
+font-size:14px;
+opacity:0.6;
+}
+
+/* BUTTON */
+
+.btn{
+margin-top:25px;
+padding:12px 22px;
+border:none;
+border-radius:10px;
+background:#2e3440;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#3b4252;
+}
+
+/* FAVORITE */
+
+.favorite-list{
+margin-top:60px;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.favorite-item{
+background:#171a22;
+padding:18px;
+border-radius:12px;
+margin-bottom:15px;
+font-size:14px;
+opacity:0.85;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.delete{
+cursor:pointer;
+opacity:0.6;
+}
+
+.delete:hover{
+opacity:1;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Ruang Quotes</h1>
+<p>
+Beberapa kalimat terkadang menyimpan makna lebih dalam daripada percakapan panjang.
+</p>
+</section>
+
+<!-- QUOTE GENERATOR -->
+<section>
+
+<div class="quote-card">
+
+<p class="quote-text" id="quoteText">
+Klik tombol untuk menemukan kutipan.
+</p>
+
+<p class="quote-author" id="quoteAuthor"></p>
+
+<button class="btn" onclick="generateQuote()">Quote Baru</button>
+<button class="btn" onclick="saveFavorite()">Simpan Favorit</button>
+
+</div>
+
+</section>
+
+<!-- FAVORITE QUOTES -->
+<section class="favorite-list">
+
+<h2>Quotes Favorit</h2>
+<div id="favoriteContainer"></div>
+
+</section>
+
+<script>
+
+/* QUOTE DATABASE */
+
+const quotes = [
+
+{
+text: "Teknologi berkembang cepat, tapi pemahaman manusia selalu membutuhkan waktu.",
+author: "Refleksi Digital"
+},
+
+{
+text: "Kesunyian sering kali bukan kosong, tapi ruang untuk memahami diri sendiri.",
+author: "Catatan Personal"
+},
+
+{
+text: "Kadang yang kita cari bukan jawaban, tapi sudut pandang baru.",
+author: "Ruang Pikiran"
+},
+
+{
+text: "Kenangan adalah cara waktu meninggalkan jejak pada manusia.",
+author: "Memoir Digital"
+},
+
+{
+text: "Tidak semua hal perlu dipahami sekarang. Beberapa hal hanya perlu dirasakan.",
+author: "Refleksi"
+},
+
+{
+text: "Eksplorasi teknologi sebenarnya adalah eksplorasi cara manusia berpikir.",
+author: "Digital Thought"
+}
+
+];
+
+let currentQuote = null;
+
+/* GENERATE QUOTE */
+
+function generateQuote(){
+
+const random = quotes[Math.floor(Math.random()*quotes.length)];
+
+document.getElementById("quoteText").innerText = `"${random.text}"`;
+document.getElementById("quoteAuthor").innerText = `— ${random.author}`;
+
+currentQuote = random;
+
+}
+
+/* SAVE FAVORITE */
+
+function saveFavorite(){
+
+if(!currentQuote) return;
+
+let fav = JSON.parse(localStorage.getItem("favoriteQuotes")) || [];
+
+fav.push(currentQuote);
+
+localStorage.setItem("favoriteQuotes", JSON.stringify(fav));
+
+loadFavorites();
+
+}
+
+/* LOAD FAVORITES */
+
+function loadFavorites(){
+
+const container = document.getElementById("favoriteContainer");
+container.innerHTML = "";
+
+let fav = JSON.parse(localStorage.getItem("favoriteQuotes")) || [];
+
+fav.forEach((q,index)=>{
+
+let div = document.createElement("div");
+div.className = "favorite-item";
+
+div.innerHTML = `
+<span>"${q.text}"</span>
+<span class="delete" onclick="deleteFavorite(${index})">✕</span>
+`;
+
+container.appendChild(div);
+
+});
+
+}
+
+/* DELETE FAVORITE */
+
+function deleteFavorite(index){
+
+let fav = JSON.parse(localStorage.getItem("favoriteQuotes")) || [];
+
+fav.splice(index,1);
+
+localStorage.setItem("favoriteQuotes", JSON.stringify(fav));
+
+loadFavorites();
+
+}
+
+/* INIT */
+
+loadFavorites();
+
+</script>
+
+</body>
+</html>
