@@ -1,1 +1,148 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"><style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#0f1117;
+    color:#e6e6e6;
+}
+
+.container{
+    padding:80px 10%;
+    max-width:1100px;
+    margin:auto;
+}
+
+h1{
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    opacity:0.6;
+    margin-bottom:40px;
+}
+
+/* GRID */
+.social-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#171a22;
+    padding:25px;
+    border-radius:16px;
+    text-decoration:none;
+    color:white;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    transition:0.3s;
+}
+
+.card i{
+    font-size:26px;
+    opacity:0.8;
+}
+
+.card span{
+    font-size:15px;
+    opacity:0.85;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    background:#1f2430;
+}
+
+/* CONTACT FORM */
+.form-box{
+    margin-top:60px;
+}
+
+form input, form textarea{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border-radius:10px;
+    border:none;
+    background:#171a22;
+    color:white;
+}
+
+button{
+    margin-top:20px;
+    padding:14px 24px;
+    border:none;
+    border-radius:10px;
+    background:#2e3440;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#3b4252;
+}
+
+.footer-note{
+    margin-top:20px;
+    opacity:0.5;
+    font-size:14px;
+}
+
+</style></head>
+<body><div class="container"><h1>Hubungi Saya</h1>
+<p class="subtitle">Beberapa tempat digital dimana kamu bisa menemukan saya.</p><div class="social-grid"><a class="card" href="#">
+<i class="fa-brands fa-youtube"></i>
+<span>YouTube</span>
+</a><a class="card" href="#">
+<i class="fa-brands fa-linkedin"></i>
+<span>LinkedIn</span>
+</a><a class="card" href="#">
+<i class="fa-brands fa-instagram"></i>
+<span>Instagram</span>
+</a><a class="card" href="#">
+<i class="fa-brands fa-threads"></i>
+<span>Threads</span>
+</a><a class="card" href="#">
+<i class="fa-brands fa-tiktok"></i>
+<span>TikTok</span>
+</a><a class="card" href="#">
+<i class="fa-brands fa-facebook"></i>
+<span>Facebook</span>
+</a><a class="card" href="#">
+<i class="fa-brands fa-whatsapp"></i>
+<span>WhatsApp</span>
+</a><a class="card" href="#">
+<i class="fa-solid fa-envelope"></i>
+<span>Email / Gmail</span>
+</a><a class="card" href="#">
+<i class="fa-brands fa-discord"></i>
+<span>Discord</span>
+</a><a class="card" href="#">
+<i class="fa-brands fa-telegram"></i>
+<span>Telegram</span>
+</a><a class="card" href="#">
+<i class="fa-brands fa-snapchat"></i>
+<span>Snapchat</span>
+</a></div><div class="form-box">
+<h1>Kirim Pesan</h1><form>
+<input placeholder="Nama" required>
+<input placeholder="Email" required>
+<textarea rows="5" placeholder="Pesan"></textarea>
+<button type="submit">Kirim Pesan</button>
+</form><p class="footer-note">Terima kasih sudah menyempatkan waktu untuk menghubungi saya.</p></div></div></body>
+</html>
