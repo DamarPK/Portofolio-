@@ -1,1 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruang Blog</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#0f1117;
+color:#e6e6e6;
+line-height:1.6;
+}
+
+section{
+padding:80px 10%;
+}
+
+h1,h2{
+font-weight:600;
+text-align:center;
+}
+
+/* HERO */
+
+.hero{
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.hero p{
+opacity:0.7;
+margin-top:15px;
+}
+
+/* BLOG GRID */
+
+.blog-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.blog-card{
+background:#171a22;
+padding:25px;
+border-radius:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.blog-card:hover{
+transform:translateY(-5px);
+background:#1f2430;
+}
+
+.blog-title{
+font-size:18px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.blog-date{
+font-size:13px;
+opacity:0.5;
+margin-bottom:10px;
+}
+
+.blog-preview{
+font-size:14px;
+opacity:0.8;
+}
+
+/* ARTICLE VIEW */
+
+.article-view{
+display:none;
+max-width:750px;
+margin:auto;
+background:#171a22;
+padding:40px;
+border-radius:18px;
+margin-top:50px;
+}
+
+.article-view h2{
+text-align:left;
+margin-bottom:15px;
+}
+
+.article-date{
+font-size:13px;
+opacity:0.5;
+margin-bottom:25px;
+}
+
+.back-btn{
+margin-top:25px;
+padding:10px 18px;
+border:none;
+border-radius:10px;
+background:#2e3440;
+color:white;
+cursor:pointer;
+}
+
+.back-btn:hover{
+background:#3b4252;
+}
+
+/* ADD BLOG */
+
+.add-blog{
+margin-top:70px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.add-blog input,
+.add-blog textarea{
+width:100%;
+padding:12px;
+margin-top:12px;
+border:none;
+border-radius:10px;
+background:#171a22;
+color:white;
+}
+
+.add-blog button{
+margin-top:15px;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#2e3440;
+color:white;
+cursor:pointer;
+}
+
+.add-blog button:hover{
+background:#3b4252;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Ruang Blog</h1>
+<p>
+Tempat menyimpan pemikiran panjang, cerita, dan refleksi yang ingin ditulis lebih dalam.
+</p>
+</section>
+
+<!-- BLOG LIST -->
+<section>
+
+<div class="blog-grid" id="blogContainer"></div>
+
+<!-- ARTICLE VIEW -->
+<div class="article-view" id="articleView">
+<h2 id="articleTitle"></h2>
+<p class="article-date" id="articleDate"></p>
+<p id="articleContent"></p>
+
+<button class="back-btn" onclick="closeArticle()">Kembali</button>
+</div>
+
+</section>
+
+<!-- ADD BLOG -->
+<section class="add-blog">
+
+<h2>Tulis Blog Baru</h2>
+
+<input id="blogTitle" placeholder="Judul tulisan">
+<textarea id="blogContent" rows="6" placeholder="Isi tulisan..."></textarea>
+
+<button onclick="addBlog()">Simpan Tulisan</button>
+
+</section>
+
+<script>
+
+/* BLOG DATABASE */
+
+let blogs = JSON.parse(localStorage.getItem("blogs")) || [
+
+{
+title:"Awal Membuat Ruang Digital",
+date:"2026",
+content:"Saya mulai membangun ruang digital ini sebagai tempat menyimpan pikiran, teknologi, dan kenangan."
+}
+
+];
+
+/* LOAD BLOG */
+
+function loadBlogs(){
+
+const container = document.getElementById("blogContainer");
+container.innerHTML = "";
+
+blogs.forEach((blog,index)=>{
+
+let card = document.createElement("div");
+card.className = "blog-card";
+
+card.innerHTML = `
+<div class="blog-title">${blog.title}</div>
+<div class="blog-date">${blog.date}</div>
+<div class="blog-preview">${blog.content.substring(0,80)}...</div>
+`;
+
+card.onclick = ()=>openArticle(index);
+
+container.appendChild(card);
+
+});
+
+}
+
+loadBlogs();
+
+/* OPEN ARTICLE */
+
+function openArticle(index){
+
+document.getElementById("articleView").style.display="block";
+
+document.getElementById("articleTitle").innerText = blogs[index].title;
+document.getElementById("articleDate").innerText = blogs[index].date;
+document.getElementById("articleContent").innerText = blogs[index].content;
+
+window.scrollTo({top:0,behavior:'smooth'});
+
+}
+
+/* CLOSE ARTICLE */
+
+function closeArticle(){
+
+document.getElementById("articleView").style.display="none";
+
+}
+
+/* ADD BLOG */
+
+function addBlog(){
+
+let title = document.getElementById("blogTitle").value;
+let content = document.getElementById("blogContent").value;
+
+if(!title || !content) return;
+
+let newBlog = {
+title:title,
+date:new Date().getFullYear(),
+content:content
+};
+
+blogs.unshift(newBlog);
+
+localStorage.setItem("blogs", JSON.stringify(blogs));
+
+document.getElementById("blogTitle").value="";
+document.getElementById("blogContent").value="";
+
+loadBlogs();
+
+}
+
+</script>
+
+</body>
+</html>
