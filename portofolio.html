@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#0f1117;
+color:#e6e6e6;
+line-height:1.6;
+}
+
+section{
+padding:80px 10%;
+}
+
+h1,h2{
+font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+max-width:700px;
+margin:auto;
+}
+
+.hero p{
+opacity:0.7;
+margin-top:15px;
+}
+
+/* PROJECT GRID */
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.project-card{
+background:#171a22;
+border-radius:15px;
+padding:25px;
+transition:0.3s;
+cursor:pointer;
+}
+
+.project-card:hover{
+transform:translateY(-6px);
+background:#1f2430;
+}
+
+.project-card h3{
+margin-bottom:10px;
+}
+
+.project-card p{
+opacity:0.7;
+font-size:14px;
+}
+
+/* TAG */
+
+.tag{
+display:inline-block;
+font-size:12px;
+padding:4px 10px;
+background:#2e3440;
+border-radius:8px;
+margin-top:12px;
+margin-right:6px;
+opacity:0.8;
+}
+
+/* REFLECTION */
+
+.reflection{
+max-width:700px;
+margin:auto;
+opacity:0.8;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Portfolio Eksplorasi</h1>
+<p>
+Kumpulan eksperimen, ide, dan perjalanan saya memahami teknologi.
+Bukan sekadar karya, tapi proses belajar.
+</p>
+</section>
+
+<!-- FEATURED PROJECT -->
+<section>
+<h2>Highlight Project</h2>
+
+<div class="project-grid">
+
+<div class="project-card" onclick="location.href='projects/digital-space.html'">
+<h3>Digital Personal Space</h3>
+<p>Website reflektif yang menggabungkan teknologi, kenangan, dan AI companion.</p>
+
+<span class="tag">Web Dev</span>
+<span class="tag">Personal Project</span>
+</div>
+
+</div>
+</section>
+
+<!-- ALL PROJECT -->
+<section>
+<h2>Eksplorasi Lainnya</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+<h3>AI Companion Prototype</h3>
+<p>Eksperimen membuat chatbot reflektif personal.</p>
+<span class="tag">AI</span>
+</div>
+
+<div class="project-card">
+<h3>UI Experiment</h3>
+<p>Mencoba berbagai konsep desain minimalis.</p>
+<span class="tag">UI Design</span>
+</div>
+
+</div>
+
+</section>
+
+<!-- REFLECTION -->
+<section class="reflection">
+<h2>Refleksi</h2>
+<p>
+Setiap project mengajarkan saya bahwa teknologi bukan hanya alat,
+tetapi ruang untuk mengekspresikan cara berpikir dan memahami dunia.
+</p>
+</section>
+
+</body>
+</html>
