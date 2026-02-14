@@ -5,19 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Personal Space</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter',sans-serif;
-}
-
 body{
     background:#0f1117;
     color:#e6e6e6;
+    font-family: 'Inter', sans-serif;
+    margin:0;
 }
 
 /* HERO */
@@ -28,13 +23,147 @@ body{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:20px;
+    padding:0 20px;
 }
 
 .hero img{
     width:130px;
     border-radius:50%;
+    opacity:.85;
     margin-bottom:20px;
+}
+
+.hero p{
+    max-width:550px;
+    opacity:.7;
+    line-height:1.6;
+}
+
+/* NAV GRID */
+.portal{
+    padding:60px 10%;
+}
+
+.portal h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#171a22;
+    padding:25px;
+    border-radius:16px;
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+    display:block;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    background:#1f2430;
+}
+
+.card h3{
+    margin-bottom:8px;
+}
+
+.card p{
+    opacity:.65;
+    font-size:14px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px 10px;
+    opacity:.5;
+    font-size:14px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+
+<img src="assets/profile.jpg" alt="Profile">
+
+<h1>Nama Kamu</h1>
+
+<p>
+Ruang digital kecil untuk menyimpan pikiran, teknologi, kenangan,
+dan percakapan yang mungkin suatu hari ingin diingat kembali.
+</p>
+
+</section>
+
+
+<!-- PORTAL NAV -->
+<section class="portal">
+
+<h2>Portal Ruang Pribadi</h2>
+
+<div class="grid">
+
+<a href="about.html" class="card">
+<h3>Tentang Saya</h3>
+<p>Refleksi diri dan cerita perjalanan hidup</p>
+</a>
+
+<a href="tech.html" class="card">
+<h3>Ruang Teknologi</h3>
+<p>Eksplorasi, eksperimen, dan catatan belajar</p>
+</a>
+
+<a href="memories.html" class="card">
+<h3>Ruang Kenangan</h3>
+<p>Arsip momen, foto, dan catatan personal</p>
+</a>
+
+<a href="journal.html" class="card">
+<h3>Journal</h3>
+<p>Pikiran acak, refleksi, dan tulisan pribadi</p>
+</a>
+
+<a href="blog.html" class="card">
+<h3>Blog</h3>
+<p>Tulisan panjang, opini, dan dokumentasi ide</p>
+</a>
+
+<a href="qoutes.html" class="card">
+<h3>Quotes</h3>
+<p>Kumpulan kata yang berkesan dan reflektif</p>
+</a>
+
+<a href="ai.html" class="card">
+<h3>AI Teman Diskusi</h3>
+<p>Ruang ngobrol dengan companion digital</p>
+</a>
+
+<a href="contact.html" class="card">
+<h3>Hubungi Saya</h3>
+<p>Tempat meninggalkan pesan</p>
+</a>
+
+</div>
+
+</section>
+
+
+<footer>
+Dibangun sebagai ruang personal digital • 2026
+</footer>
+
+</body>
+</html>    margin-bottom:20px;
     opacity:0.85;
 }
 
