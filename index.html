@@ -1,127 +1,152 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portofolio | Nama Kamu</title>
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      background: #f7f7f7;
-      color: #222;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    header {
-      margin-bottom: 30px;
-    }
-    h1 {
-      margin-bottom: 5px;
-    }
-    h2 {
-      margin-top: 40px;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-    }
-    .card {
-      background: #fff;
-      padding: 15px;
-      margin-top: 15px;
-      border-radius: 6px;
-    }
-    .tag {
-      display: inline-block;
-      background: #eaeaea;
-      padding: 4px 8px;
-      margin: 4px 4px 0 0;
-      border-radius: 4px;
-      font-size: 12px;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #555;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Personal Space</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#0f1117;
+    color:#e6e6e6;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero img{
+    width:130px;
+    border-radius:50%;
+    margin-bottom:20px;
+    opacity:0.85;
+}
+
+.hero p{
+    max-width:520px;
+    opacity:0.7;
+    margin-top:10px;
+}
+
+/* DASHBOARD GRID */
+.dashboard{
+    padding:80px 10%;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.card{
+    background:#171a22;
+    padding:30px;
+    border-radius:18px;
+    transition:0.3s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    background:#1f2430;
+}
+
+.card a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    font-weight:500;
+}
+
+.card p{
+    opacity:0.6;
+    margin-top:8px;
+    font-size:14px;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:30px;
+    opacity:0.5;
+    font-size:13px;
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
 
-    <header>
-      <h1>Nama Kamu</h1>
-      <p>Pelajar / Mahasiswa / Fresh Graduate</p>
-      <p>
-        📧 email@email.com |
-        🔗 <a href="https://github.com/username" target="_blank">GitHub</a> |
-        🌐 <a href="https://namakamu.com" target="_blank">Website</a>
-      </p>
-    </header>
+<!-- HERO -->
+<section class="hero">
+    <img src="assets/profile.png" alt="Profile">
+    <h1>Nama Kamu</h1>
+    <p>
+        Ruang digital kecil untuk menyimpan pikiran, teknologi, 
+        kenangan, dan percakapan yang mungkin suatu hari ingin diingat kembali.
+    </p>
+</section>
 
-    <section>
-      <h2>Tentang Saya</h2>
-      <div class="card">
-        <p>
-          Saya memiliki minat pada bidang teknologi dan pemrograman.
-          Terbiasa berpikir logis, mengerjakan proyek mandiri, dan
-          mendokumentasikan hasil kerja dengan rapi.
-        </p>
-      </div>
-    </section>
+<!-- DASHBOARD -->
+<section class="dashboard">
+    <h2>Portal Ruang Pribadi</h2>
 
-    <section>
-      <h2>Proyek</h2>
+    <div class="card-grid">
 
-      <div class="card">
-        <h3>Judul Proyek 1</h3>
-        <p><strong>Deskripsi:</strong> Aplikasi sederhana untuk mengelola data pengguna.</p>
-        <p><strong>Peran:</strong> Full project (desain & coding)</p>
-        <p><strong>Tools:</strong></p>
-        <span class="tag">HTML</span>
-        <span class="tag">CSS</span>
-        <span class="tag">JavaScript</span>
-        <p>
-          🔗 <a href="https://github.com/username/proyek1" target="_blank">Lihat Project</a>
-        </p>
-      </div>
+        <div class="card">
+            <a href="about.html">Tentang Saya</a>
+            <p>Refleksi diri dan cerita perjalanan hidup</p>
+        </div>
 
-      <div class="card">
-        <h3>Judul Proyek 2</h3>
-        <p><strong>Deskripsi:</strong> Analisis data sederhana menggunakan spreadsheet.</p>
-        <p><strong>Peran:</strong> Data processing</p>
-        <p><strong>Tools:</strong></p>
-        <span class="tag">Excel</span>
-        <span class="tag">Google Sheets</span>
-      </div>
+        <div class="card">
+            <a href="tech.html">Ruang Teknologi</a>
+            <p>Eksplorasi, eksperimen, dan catatan belajar</p>
+        </div>
 
-    </section>
+        <div class="card">
+            <a href="memories.html">Ruang Kenangan</a>
+            <p>Arsip momen, foto, dan catatan personal</p>
+        </div>
 
-    <section>
-      <h2>Skill</h2>
-      <div class="card">
-        <span class="tag">HTML</span>
-        <span class="tag">CSS</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">Python (Dasar)</span>
-        <span class="tag">Problem Solving</span>
-      </div>
-    </section>
+        <div class="card">
+            <a href="journal.html">Journal</a>
+            <p>Pikiran acak, refleksi, dan tulisan pribadi</p>
+        </div>
 
-    <footer>
-      <p>© 2026 Nama Kamu</p>
-    </footer>
+        <div class="card">
+            <a href="ai.html">AI Teman Diskusi</a>
+            <p>Ruang ngobrol dengan companion digital</p>
+        </div>
 
-  </div>
+        <div class="card">
+            <a href="contact.html">Hubungi Saya</a>
+            <p>Tempat meninggalkan pesan</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+    Dibangun sebagai ruang personal digital • 2026
+</div>
+
 </body>
-  </html>
+</html>
