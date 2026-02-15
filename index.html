@@ -39,7 +39,7 @@ body{
     line-height:1.6;
 }
 
-/* NAV GRID */
+/* PORTAL GRID */
 .portal{
     padding:60px 10%;
 }
@@ -86,86 +86,287 @@ footer{
     opacity:.5;
     font-size:14px;
 }
-</style>
 
+/* SCROLL NAVBAR BAWAH */
+.scroll-navbar{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:90%;
+    max-width:600px;
+    background:rgba(23,26,34,0.9);
+    padding:15px 25px;
+    border-radius:20px;
+    opacity:1;
+    transition:0.4s ease;
+    z-index:999;
+}
+
+.scroll-navbar.hide{
+    opacity:0;
+    pointer-events:none;
+}
+
+.home-link a{
+    color:white;
+    font-weight:600;
+    font-size:16px;
+    text-decoration:none;
+}
+
+.ai-center #openAI{
+    width:50px;
+    height:50px;
+    background:#171a22;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:24px;
+    transition:0.3s;
+}
+
+.profile-music{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.profile-img{
+    width:40px;
+    border-radius:50%;
+    opacity:0.85;
+}
+
+#musicToggle{
+    width:40px;
+    height:40px;
+    background:#171a22;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#musicToggle.playing{
+    animation:spin 4s linear infinite;
+}
+
+@keyframes spin{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+/* AI FULLSCREEN */
+#aiFullPage{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#0f1117;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 0.4s ease;
+}
+
+#aiFullPage.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.ai-center-full{
+    text-align:center;
+    width:90%;
+    max-width:420px;
+}
+
+.ai-logo{
+    width:70px;
+    opacity:0.85;
+    margin-bottom:10px;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0px)}
+    50%{transform:translateY(-8px)}
+    100%{transform:translateY(0px)}
+}
+</style>
 </head>
 <body>
 
 <!-- HERO -->
 <section class="hero">
-
-<img src="assets/IMG-20260214-WA0042.jpg" alt="Profile">
-
-<h1>Damar Putera Koerdi</h1>
-
-<p>
-Ruang digital kecil untuk menyimpan pikiran, teknologi, kenangan,
-dan percakapan yang mungkin suatu hari ingin diingat kembali.
-</p>
-
+    <img src="assets/IMG-20260214-WA0042.jpg" alt="Profile">
+    <h1>Damar Putera Koerdi</h1>
+    <p>
+    Ruang digital kecil untuk menyimpan pikiran, teknologi, kenangan,
+    dan percakapan yang mungkin suatu hari ingin diingat kembali.
+    </p>
 </section>
-
 
 <!-- PORTAL NAV -->
 <section class="portal">
-
-<h2>Portal Ruang Pribadi</h2>
-
-<div class="grid">
-
-<a href="about.html" class="card">
-<h3>Tentang Saya</h3>
-<p>Refleksi diri dan cerita perjalanan hidup</p>
-</a>
-    
-<a href="portofolio.html" class="card">
-<h3>Portofolio</h3>
-<p>Kumpulan karya visual, website, video, dan eksplorasi kreatif</p>
-</a>
-    
-<a href="tech.html" class="card">
-<h3>Ruang Teknologi</h3>
-<p>Eksplorasi, eksperimen, dan catatan belajar</p>
-</a>
-
-<a href="memories.html" class="card">
-<h3>Ruang Kenangan</h3>
-<p>Arsip momen, foto, dan catatan personal</p>
-</a>
-
-<a href="journal.html" class="card">
-<h3>Journal</h3>
-<p>Pikiran acak, refleksi, dan tulisan pribadi</p>
-</a>
-
-<a href="blog.html" class="card">
-<h3>Blog</h3>
-<p>Tulisan panjang, opini, dan dokumentasi ide</p>
-</a>
-
-<a href="qoutes.html" class="card">
-<h3>Quotes</h3>
-<p>Kumpulan kata yang berkesan dan reflektif</p>
-</a>
-
-<a href="ai.html" class="card">
-<h3>AI Teman Diskusi</h3>
-<p>Ruang ngobrol dengan companion digital</p>
-</a>
-
-<a href="contact.html" class="card">
-<h3>Hubungi Saya</h3>
-<p>Tempat meninggalkan pesan</p>
-</a>
-
-</div>
-
+    <h2>Portal Ruang Pribadi</h2>
+    <div class="grid">
+        <a href="about.html" class="card">
+            <h3>Tentang Saya</h3>
+            <p>Refleksi diri dan cerita perjalanan hidup</p>
+        </a>
+        <a href="portofolio.html" class="card">
+            <h3>Portofolio</h3>
+            <p>Kumpulan karya visual, website, video, dan eksplorasi kreatif</p>
+        </a>
+        <a href="tech.html" class="card">
+            <h3>Ruang Teknologi</h3>
+            <p>Eksplorasi, eksperimen, dan catatan belajar</p>
+        </a>
+        <a href="memories.html" class="card">
+            <h3>Ruang Kenangan</h3>
+            <p>Arsip momen, foto, dan catatan personal</p>
+        </a>
+        <a href="journal.html" class="card">
+            <h3>Journal</h3>
+            <p>Pikiran acak, refleksi, dan tulisan pribadi</p>
+        </a>
+        <a href="blog.html" class="card">
+            <h3>Blog</h3>
+            <p>Tulisan panjang, opini, dan dokumentasi ide</p>
+        </a>
+        <a href="qoutes.html" class="card">
+            <h3>Quotes</h3>
+            <p>Kumpulan kata yang berkesan dan reflektif</p>
+        </a>
+        <a href="ai.html" class="card">
+            <h3>AI Teman Diskusi</h3>
+            <p>Ruang ngobrol dengan companion digital</p>
+        </a>
+        <a href="contact.html" class="card">
+            <h3>Hubungi Saya</h3>
+            <p>Tempat meninggalkan pesan</p>
+        </a>
+    </div>
 </section>
-
 
 <footer>
 Dibangun sebagai ruang personal digital • 2026
 </footer>
+
+<!-- NAVBAR BAWAH -->
+<div id="scrollNavbar" class="scroll-navbar">
+    <div class="home-link"><a href="index.html">Home</a></div>
+    <div class="ai-center"><div id="openAI" title="Open AI">🤖</div></div>
+    <div class="profile-music">
+        <img src="assets/IMG-20260214-WA0042.jpg" class="profile-img" />
+        <div id="musicToggle" title="Play / Pause Music">🎵</div>
+    </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="bgMusic" src="assets/when-i-close-my-eyes.mp3" loop></audio>
+
+<!-- AI FULLSCREEN -->
+<div id="aiFullPage">
+    <div class="ai-center-full">
+        <div id="backDashboard">← Kembali</div>
+        <img src="assets/IMG-20260214-WA0042.jpg" class="ai-logo">
+        <div class="chatbox" style="margin-top:20px;">
+            <div class="chatlog" id="chatlogFull"></div>
+            <input id="chatInputFull" placeholder="Ngobrol dengan AI..."/>
+        </div>
+    </div>
+</div>
+
+<script>
+// MUSIC CONTROL
+const music = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
+music.volume = 0.05;
+music.play().catch(()=>{});
+musicToggle.addEventListener('click', () => {
+    if(music.paused){
+        music.play();
+        musicToggle.classList.add('playing');
+    } else {
+        music.pause();
+        musicToggle.classList.remove('playing');
+    }
+});
+
+// SCROLL NAVBAR
+let lastScroll = 0;
+const navbar = document.getElementById('scrollNavbar');
+window.addEventListener('scroll', ()=>{
+    const currentScroll = window.pageYOffset;
+    if(currentScroll > lastScroll){
+        navbar.classList.add('hide');
+    } else {
+        navbar.classList.remove('hide');
+    }
+    lastScroll = currentScroll;
+});
+
+// AI FULLSCREEN
+const openAI = document.getElementById('openAI');
+const aiPage = document.getElementById('aiFullPage');
+const backDashboard = document.getElementById('backDashboard');
+
+openAI.addEventListener('click', ()=>{
+    aiPage.classList.add('show');
+});
+
+backDashboard.addEventListener('click', ()=>{
+    aiPage.classList.remove('show');
+});
+
+// SIMPLE AI CHAT MEMORY
+const chatLogFull = document.getElementById('chatlogFull');
+const chatInputFull = document.getElementById('chatInputFull');
+
+let chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
+function renderChat(){
+    chatLogFull.innerHTML = '';
+    chatHistory.forEach(msg=>{
+        chatLogFull.innerHTML += `<div>${msg.user?'> '+msg.user:'AI: '+msg.ai}</div>`;
+    });
+    chatLogFull.scrollTop = chatLogFull.scrollHeight;
+}
+renderChat();
+
+chatInputFull.addEventListener('keypress',(e)=>{
+    if(e.key==='Enter' && chatInputFull.value.trim()!==''){
+        const userMsg = chatInputFull.value;
+        chatHistory.push({user:userMsg});
+        // Simple pseudo AI reply
+        const aiReplies = [
+            "Menarik, ceritakan lebih banyak.",
+            "Hmm, aku mengerti… lanjutkan.",
+            "Refleksi itu penting, teruskan.",
+            "Aku mendengarkanmu.",
+            "Cerita itu berkesan."
+        ];
+        const aiMsg = aiReplies[Math.floor(Math.random()*aiReplies.length)];
+        chatHistory.push({ai:aiMsg});
+        localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+        renderChat();
+        chatInputFull.value = '';
+    }
+});
+</script>
 
 </body>
 </html>
