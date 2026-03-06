@@ -1,272 +1,114 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ruang Quotes</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
-
-body{
-background:#0f1117;
-color:#e6e6e6;
-line-height:1.6;
-}
-
-section{
-padding:80px 10%;
-text-align:center;
-}
-
-h1,h2{
-font-weight:600;
-}
-
-/* HERO */
-
-.hero{
-max-width:700px;
-margin:auto;
-}
-
-.hero p{
-opacity:0.7;
-margin-top:15px;
-}
-
-/* QUOTE CARD */
-
-.quote-card{
-margin-top:50px;
-background:#171a22;
-padding:40px;
-border-radius:18px;
-max-width:650px;
-margin-left:auto;
-margin-right:auto;
-transition:0.3s;
-}
-
-.quote-text{
-font-size:18px;
-font-style:italic;
-opacity:0.9;
-}
-
-.quote-author{
-margin-top:15px;
-font-size:14px;
-opacity:0.6;
-}
-
-/* BUTTON */
-
-.btn{
-margin-top:25px;
-padding:12px 22px;
-border:none;
-border-radius:10px;
-background:#2e3440;
-color:white;
-cursor:pointer;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#3b4252;
-}
-
-/* FAVORITE */
-
-.favorite-list{
-margin-top:60px;
-max-width:700px;
-margin-left:auto;
-margin-right:auto;
-}
-
-.favorite-item{
-background:#171a22;
-padding:18px;
-border-radius:12px;
-margin-bottom:15px;
-font-size:14px;
-opacity:0.85;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.delete{
-cursor:pointer;
-opacity:0.6;
-}
-
-.delete:hover{
-opacity:1;
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="hero">
-<h1>Ruang Quotes</h1>
-<p>
-Beberapa kalimat terkadang menyimpan makna lebih dalam daripada percakapan panjang.
-</p>
-</section>
-
-<!-- QUOTE GENERATOR -->
-<section>
-
-<div class="quote-card">
-
-<p class="quote-text" id="quoteText">
-Klik tombol untuk menemukan kutipan.
-</p>
-
-<p class="quote-author" id="quoteAuthor"></p>
-
-<button class="btn" onclick="generateQuote()">Quote Baru</button>
-<button class="btn" onclick="saveFavorite()">Simpan Favorit</button>
-
-</div>
-
-</section>
-
-<!-- FAVORITE QUOTES -->
-<section class="favorite-list">
-
-<h2>Quotes Favorit</h2>
-<div id="favoriteContainer"></div>
-
-</section>
-
-<script>
-
-/* QUOTE DATABASE */
-
-const quotes = [
-
-{
-text: "Teknologi berkembang cepat, tapi pemahaman manusia selalu membutuhkan waktu.",
-author: "Refleksi Digital"
-},
-
-{
-text: "Kesunyian sering kali bukan kosong, tapi ruang untuk memahami diri sendiri.",
-author: "Catatan Personal"
-},
-
-{
-text: "Kadang yang kita cari bukan jawaban, tapi sudut pandang baru.",
-author: "Ruang Pikiran"
-},
-
-{
-text: "Kenangan adalah cara waktu meninggalkan jejak pada manusia.",
-author: "Memoir Digital"
-},
-
-{
-text: "Tidak semua hal perlu dipahami sekarang. Beberapa hal hanya perlu dirasakan.",
-author: "Refleksi"
-},
-
-{
-text: "Eksplorasi teknologi sebenarnya adalah eksplorasi cara manusia berpikir.",
-author: "Digital Thought"
-}
-
-];
-
-let currentQuote = null;
-
-/* GENERATE QUOTE */
-
-function generateQuote(){
-
-const random = quotes[Math.floor(Math.random()*quotes.length)];
-
-document.getElementById("quoteText").innerText = `"${random.text}"`;
-document.getElementById("quoteAuthor").innerText = `— ${random.author}`;
-
-currentQuote = random;
-
-}
-
-/* SAVE FAVORITE */
-
-function saveFavorite(){
-
-if(!currentQuote) return;
-
-let fav = JSON.parse(localStorage.getItem("favoriteQuotes")) || [];
-
-fav.push(currentQuote);
-
-localStorage.setItem("favoriteQuotes", JSON.stringify(fav));
-
-loadFavorites();
-
-}
-
-/* LOAD FAVORITES */
-
-function loadFavorites(){
-
-const container = document.getElementById("favoriteContainer");
-container.innerHTML = "";
-
-let fav = JSON.parse(localStorage.getItem("favoriteQuotes")) || [];
-
-fav.forEach((q,index)=>{
-
-let div = document.createElement("div");
-div.className = "favorite-item";
-
-div.innerHTML = `
-<span>"${q.text}"</span>
-<span class="delete" onclick="deleteFavorite(${index})">✕</span>
-`;
-
-container.appendChild(div);
-
-});
-
-}
-
-/* DELETE FAVORITE */
-
-function deleteFavorite(index){
-
-let fav = JSON.parse(localStorage.getItem("favoriteQuotes")) || [];
-
-fav.splice(index,1);
-
-localStorage.setItem("favoriteQuotes", JSON.stringify(fav));
-
-loadFavorites();
-
-}
-
-/* INIT */
-
-loadFavorites();
-
-</script>
-
-</body>
-</html>
+<article class="prose dark:prose-invert max-w-none mx-auto px-4 py-8">
+  <h1 class="text-5xl font-extrabold mb-10 text-center bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">
+    Ruang Quotes
+  </h1>
+
+  <p class="text-xl text-center text-gray-600 dark:text-gray-300 mb-12 italic leading-relaxed">
+    Beberapa kalimat terkadang menyimpan makna lebih dalam daripada percakapan panjang.<br>
+    Klik "Quote Baru" untuk dapatkan inspirasi acak, atau simpan yang bikin hati tergetar.
+  </p>
+
+  <!-- Controls -->
+  <div class="flex justify-center space-x-6 mb-12">
+    <button id="new-quote-btn" class="px-8 py-4 bg-amber-600 text-white rounded-full font-medium text-lg hover:bg-amber-700 transition shadow-lg">
+      Quote Baru
+    </button>
+    <button id="save-fav-btn" class="px-8 py-4 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full font-medium text-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition shadow-lg">
+      Simpan Favorit
+    </button>
+  </div>
+
+  <!-- Current Quote Display -->
+  <div id="quote-display" class="min-h-[200px] flex items-center justify-center text-center px-6">
+    <div class="max-w-3xl p-10 bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-amber-200 dark:border-amber-800">
+      <p id="quote-text" class="text-3xl font-medium italic text-gray-800 dark:text-gray-200 mb-6">
+        "Klik 'Quote Baru' untuk mulai..."
+      </p>
+      <p id="quote-author" class="text-xl text-amber-600 dark:text-amber-400 font-semibold">
+        — Damar PK
+      </p>
+    </div>
+  </div>
+
+  <!-- Quotes Favorit Section -->
+  <h2 class="text-4xl font-bold mt-16 mb-8 text-center border-b border-amber-500 pb-4">Quotes Favorit</h2>
+  <div id="favorites-list" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Quotes favorit akan muncul di sini via JS -->
+    <p class="text-center text-gray-500 dark:text-gray-400 col-span-full italic">
+      Belum ada favorit tersimpan. Tambahkan yang bikin lo terinspirasi!
+    </p>
+  </div>
+
+  <!-- JS untuk random quotes & save favorite -->
+  <script>
+    const quotes = [
+      { text: "Less is more, slow is smooth.", author: "Damar Putera Koerdi" },
+      { text: "Teknologi bukan pengganti manusia, tapi cermin pola pikir kita.", author: "Refleksi 2026" },
+      { text: "Kenangan kecil sering jadi pengingat terbesar.", author: "Ruang Kenangan" },
+      { text: "Pendiam bukan berarti kosong, tapi penuh pengamatan.", author: "Tentang Saya" },
+      { text: "Prompt yang baik adalah percakapan, bukan perintah.", author: "AI Companion" },
+      { text: "Jalan lambat tapi pasti, lebih baik daripada lari lalu jatuh.", author: "Slow Living" },
+      // Tambah quotes favorit lo sendiri di array ini
+    ];
+
+    const quoteText = document.getElementById('quote-text');
+    const quoteAuthor = document.getElementById('quote-author');
+    const newQuoteBtn = document.getElementById('new-quote-btn');
+    const saveFavBtn = document.getElementById('save-fav-btn');
+    const favoritesList = document.getElementById('favorites-list');
+
+    let currentQuote = null;
+
+    function showRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      currentQuote = quotes[randomIndex];
+      quoteText.textContent = `"${currentQuote.text}"`;
+      quoteAuthor.textContent = `— ${currentQuote.author}`;
+    }
+
+    function saveFavorite() {
+      if (!currentQuote) return alert("Generate quote dulu bro!");
+      let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+      if (!favorites.some(q => q.text === currentQuote.text)) {
+        favorites.push(currentQuote);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        renderFavorites();
+        alert("Favorit tersimpan!");
+      } else {
+        alert("Sudah ada di favorit.");
+      }
+    }
+
+    function renderFavorites() {
+      const favs = JSON.parse(localStorage.getItem('favorites') || '[]');
+      favoritesList.innerHTML = '';
+      if (favs.length === 0) {
+        favoritesList.innerHTML = '<p class="text-center text-gray-500 dark:text-gray-400 col-span-full italic">Belum ada favorit tersimpan. Tambahkan yang bikin lo terinspirasi!</p>';
+      } else {
+        favs.forEach(q => {
+          const card = document.createElement('div');
+          card.className = 'bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-amber-200 dark:border-amber-800';
+          card.innerHTML = `
+            <p class="text-xl italic mb-4">"${q.text}"</p>
+            <p class="text-right text-amber-600 dark:text-amber-400 font-semibold">— ${q.author}</p>
+          `;
+          favoritesList.appendChild(card);
+        });
+      }
+    }
+
+    // Event listeners
+    newQuoteBtn.addEventListener('click', showRandomQuote);
+    saveFavBtn.addEventListener('click', saveFavorite);
+
+    // Load favorites on page load
+    renderFavorites();
+
+    // Show first random quote on load
+    showRandomQuote();
+  </script>
+
+  <p class="text-center mt-12 text-gray-500 dark:text-gray-400 italic">
+    Updated: Maret 2026 • Tambah quotes lo sendiri di array JS
+  </p>
+</article>
