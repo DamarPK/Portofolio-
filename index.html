@@ -1,40 +1,161 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Digital Personal Space</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Personal Space • Damar Putera Koerdi</title>
+  <meta name="description" content="Ruang digital kecil untuk menyimpan pikiran, teknologi, kenangan, dan percakapan."/>
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .card { 
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+    }
+    .card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15); 
+    }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen antialiased">
 
-<link rel="stylesheet" href="css/style.css">
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-800/50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
+        Damar PK
+      </a>
+      <button 
+        onclick="backToHome()" 
+        class="px-5 py-2 text-sm font-medium bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 rounded-lg hover:bg-indigo-200 dark:hover:bg-indigo-900/70 transition"
+      >
+        ← Kembali ke Home
+      </button>
+    </div>
+  </nav>
 
-<style>
-body{
-    background:#0f1117;
-    color:#e6e6e6;
-    font-family: 'Inter', sans-serif;
-    margin:0;
-}
+  <!-- Hero -->
+  <section class="pt-40 pb-24 px-6 text-center max-w-5xl mx-auto">
+    <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
+      # Digital Personal Space
+    </h1>
+    <h2 class="text-3xl md:text-5xl font-semibold text-gray-700 dark:text-gray-300 mb-8">
+      Damar Putera Koerdi
+    </h2>
+    <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
+      Ruang digital kecil untuk menyimpan pikiran, teknologi, kenangan, dan percakapan yang mungkin suatu hari ingin diingat kembali.
+    </p>
+  </section>
 
-/* HERO */
-.hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:0 20px;
-}
+  <!-- Portal Grid Cards -->
+  <section class="py-16 px-6 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-200">Portal Ruang Pribadi</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Tentang Saya -->
+      <div class="card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden cursor-pointer border border-gray-100 dark:border-gray-700" onclick="loadContent('about')">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Tentang Saya</h3>
+          <p class="text-gray-600 dark:text-gray-400">Pendiam, penyuka teknologi & kenangan. Refleksi diri, perjalanan lambat, dan filosofi hidup yang tenang.</p>
+        </div>
+      </div>
 
-.hero img{
-    width:130px;
-    border-radius:50%;
-    opacity:.85;
-    margin-bottom:20px;
-}
+      <!-- Portofolio -->
+      <div class="card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden cursor-pointer border border-gray-100 dark:border-gray-700" onclick="loadContent('portofolio')">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Portofolio</h3>
+          <p class="text-gray-600 dark:text-gray-400">Highlight: Digital Personal Space, AI Companion Prototype, UI Experiment. Karya web, AI, dan desain minimalis.</p>
+        </div>
+      </div>
 
-.hero p{
-    max-width:550px;
+      <!-- Ruang Teknologi -->
+      <div class="card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden cursor-pointer border border-gray-100 dark:border-gray-700" onclick="loadContent('tech')">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Ruang Teknologi</h3>
+          <p class="text-gray-600 dark:text-gray-400">Eksplorasi web dev, AI companion, UI/UX minimal, prompt engineering, dan catatan belajar teknologi reflektif.</p>
+        </div>
+      </div>
+
+      <!-- Ruang Kenangan -->
+      <div class="card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden cursor-pointer border border-gray-100 dark:border-gray-700" onclick="loadContent('memories')">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Ruang Kenangan</h3>
+          <p class="text-gray-600 dark:text-gray-400">Arsip momen, foto, dan catatan personal yang bermakna.</p>
+        </div>
+      </div>
+
+      <!-- Journal -->
+      <div class="card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden cursor-pointer border border-gray-100 dark:border-gray-700" onclick="loadContent('journal')">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Journal</h3>
+          <p class="text-gray-600 dark:text-gray-400">Pikiran acak, refleksi harian, dan tulisan pribadi.</p>
+        </div>
+      </div>
+
+      <!-- Blog -->
+      <div class="card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden cursor-pointer border border-gray-100 dark:border-gray-700" onclick="loadContent('blog')">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Blog</h3>
+          <p class="text-gray-600 dark:text-gray-400">Tulisan panjang, opini, dan dokumentasi ide mendalam.</p>
+        </div>
+      </div>
+
+      <!-- Quotes -->
+      <div class="card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden cursor-pointer border border-gray-100 dark:border-gray-700" onclick="loadContent('qoutes')">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Quotes</h3>
+          <p class="text-gray-600 dark:text-gray-400">Kumpulan kata-kata berkesan dan reflektif.</p>
+        </div>
+      </div>
+
+      <!-- AI Teman Diskusi -->
+      <div class="card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden cursor-pointer border border-gray-100 dark:border-gray-700" onclick="loadContent('ai')">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">AI Teman Diskusi</h3>
+          <p class="text-gray-600 dark:text-gray-400">Ruang ngobrol dengan companion digital untuk refleksi dan eksplorasi ide.</p>
+        </div>
+      </div>
+
+      <!-- Hubungi Saya -->
+      <div class="card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden cursor-pointer border border-gray-100 dark:border-gray-700" onclick="loadContent('contact')">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Hubungi Saya</h3>
+          <p class="text-gray-600 dark:text-gray-400">Tempat meninggalkan pesan atau kontak.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Dynamic Content Area -->
+  <div id="content-area" class="hidden min-h-screen py-20 px-6 max-w-5xl mx-auto">
+    <div id="loading" class="text-center py-12 text-xl text-gray-600 dark:text-gray-400 animate-pulse">
+      Memuat konten...
+    </div>
+    <div id="loaded-content" class="prose dark:prose-invert max-w-none"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-12 text-center text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800">
+    <p>© 2026 Digital Personal Space • Damar Putera Koerdi</p>
+  </footer>
+
+  <script src="assets/js/script.js" defer></script>
+</body>
+</html>    max-width:550px;
     opacity:.7;
     line-height:1.6;
 }
