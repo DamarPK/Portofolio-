@@ -1,162 +1,65 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
+<article class="prose dark:prose-invert max-w-none mx-auto px-4 py-8">
+  <h1 class="text-5xl font-extrabold mb-10 text-center bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+    Portofolio
+  </h1>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <p class="text-xl text-center text-gray-600 dark:text-gray-300 mb-12 italic">
+    Kumpulan eksperimen, ide, dan perjalanan memahami teknologi.<br>
+    Bukan sekadar karya, tapi proses belajar yang terus berlanjut.
+  </p>
 
-<style>
+  <h2 class="text-4xl font-bold mb-8 border-b border-indigo-500 pb-4">Highlight Project</h2>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Project 1 -->
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow">
+      <div class="p-6">
+        <h3 class="text-2xl font-bold mb-3 text-indigo-600 dark:text-indigo-400">Digital Personal Space</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          Website reflektif yang menggabungkan teknologi, kenangan, dan AI companion. Ruang pribadi digital ini jadi pusat dari semuanya.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 rounded-full text-sm">Web Dev</span>
+          <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-full text-sm">Personal Project</span>
+        </div>
+      </div>
+    </div>
 
-body{
-background:#0f1117;
-color:#e6e6e6;
-line-height:1.6;
-}
+    <!-- Project 2 -->
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow">
+      <div class="p-6">
+        <h3 class="text-2xl font-bold mb-3 text-indigo-600 dark:text-indigo-400">AI Companion Prototype</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          Eksperimen membuat chatbot reflektif personal untuk diskusi pikiran dalam dan eksplorasi ide.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full text-sm">AI</span>
+          <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full text-sm">Prototype</span>
+        </div>
+      </div>
+    </div>
 
-section{
-padding:80px 10%;
-}
+    <!-- Project 3 -->
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-shadow">
+      <div class="p-6">
+        <h3 class="text-2xl font-bold mb-3 text-indigo-600 dark:text-indigo-400">UI Experiment</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          Mencoba berbagai konsep desain minimalis, clean layout, dan user experience yang tenang.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-pink-100 dark:bg-pink-900/50 text-pink-700 dark:text-pink-300 rounded-full text-sm">UI Design</span>
+          <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/50 text-yellow-700 dark:text-yellow-300 rounded-full text-sm">Experiment</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-h1,h2{
-font-weight:600;
-}
+  <h2 class="text-4xl font-bold mt-16 mb-8 border-b border-indigo-500 pb-4">Refleksi</h2>
+  <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+    Setiap project mengajarkan saya bahwa teknologi bukan hanya alat, tetapi ruang untuk mengekspresikan cara berpikir dan memahami dunia. Prosesnya lebih penting daripada hasil akhir.
+  </p>
 
-/* HERO */
-
-.hero{
-text-align:center;
-max-width:700px;
-margin:auto;
-}
-
-.hero p{
-opacity:0.7;
-margin-top:15px;
-}
-
-/* PROJECT GRID */
-
-.project-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-margin-top:40px;
-}
-
-.project-card{
-background:#171a22;
-border-radius:15px;
-padding:25px;
-transition:0.3s;
-cursor:pointer;
-}
-
-.project-card:hover{
-transform:translateY(-6px);
-background:#1f2430;
-}
-
-.project-card h3{
-margin-bottom:10px;
-}
-
-.project-card p{
-opacity:0.7;
-font-size:14px;
-}
-
-/* TAG */
-
-.tag{
-display:inline-block;
-font-size:12px;
-padding:4px 10px;
-background:#2e3440;
-border-radius:8px;
-margin-top:12px;
-margin-right:6px;
-opacity:0.8;
-}
-
-/* REFLECTION */
-
-.reflection{
-max-width:700px;
-margin:auto;
-opacity:0.8;
-text-align:center;
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="hero">
-<h1>Portfolio Eksplorasi</h1>
-<p>
-Kumpulan eksperimen, ide, dan perjalanan saya memahami teknologi.
-Bukan sekadar karya, tapi proses belajar.
-</p>
-</section>
-
-<!-- FEATURED PROJECT -->
-<section>
-<h2>Highlight Project</h2>
-
-<div class="project-grid">
-
-<div class="project-card" onclick="location.href='projects/digital-space.html'">
-<h3>Digital Personal Space</h3>
-<p>Website reflektif yang menggabungkan teknologi, kenangan, dan AI companion.</p>
-
-<span class="tag">Web Dev</span>
-<span class="tag">Personal Project</span>
-</div>
-
-</div>
-</section>
-
-<!-- ALL PROJECT -->
-<section>
-<h2>Eksplorasi Lainnya</h2>
-
-<div class="project-grid">
-
-<div class="project-card">
-<h3>AI Companion Prototype</h3>
-<p>Eksperimen membuat chatbot reflektif personal.</p>
-<span class="tag">AI</span>
-</div>
-
-<div class="project-card">
-<h3>UI Experiment</h3>
-<p>Mencoba berbagai konsep desain minimalis.</p>
-<span class="tag">UI Design</span>
-</div>
-
-</div>
-
-</section>
-
-<!-- REFLECTION -->
-<section class="reflection">
-<h2>Refleksi</h2>
-<p>
-Setiap project mengajarkan saya bahwa teknologi bukan hanya alat,
-tetapi ruang untuk mengekspresikan cara berpikir dan memahami dunia.
-</p>
-</section>
-
-</body>
-</html>
+  <p class="text-center mt-12 text-gray-500 dark:text-gray-400 italic">
+    Updated: Maret 2026 • Masih dalam perjalanan...
+  </p>
+</article>
