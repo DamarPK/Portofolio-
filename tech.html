@@ -1,206 +1,77 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ruang Teknologi</title>
+<article class="prose dark:prose-invert max-w-none mx-auto px-4 py-8">
+  <h1 class="text-5xl font-extrabold mb-10 text-center bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+    Ruang Teknologi
+  </h1>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <p class="text-xl text-center text-gray-600 dark:text-gray-300 mb-12 italic leading-relaxed">
+    Tempat saya mengeksplorasi ide, memahami sistem, dan mencatat perjalanan belajar teknologi.<br>
+    Bukan sekadar belajar… tapi mencoba memahami bagaimana teknologi membentuk cara manusia berpikir.
+  </p>
 
-<style>
+  <h2 class="text-4xl font-bold mb-8 border-b border-blue-500 pb-4">Area Eksplorasi</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-xl transition">
+      <h3 class="text-2xl font-semibold mb-3 text-blue-600 dark:text-blue-400">Web Development</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Membangun ruang digital personal, UI reflektif, dan eksperimen interaksi manusia dengan website.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full text-sm">HTML</span>
+        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full text-sm">CSS</span>
+        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full text-sm">JavaScript</span>
+      </div>
+    </div>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-xl transition">
+      <h3 class="text-2xl font-semibold mb-3 text-blue-600 dark:text-blue-400">Artificial Intelligence</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Mengeksplorasi AI sebagai companion digital dan alat refleksi pemikiran.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full text-sm">AI Concept</span>
+        <span class="px-3 py-1 bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-full text-sm">Automation</span>
+      </div>
+    </div>
 
-body{
-background:#0f1117;
-color:#e6e6e6;
-line-height:1.6;
-}
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-xl transition">
+      <h3 class="text-2xl font-semibold mb-3 text-blue-600 dark:text-blue-400">UI & Interaction Design</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Mencoba menciptakan desain yang terasa hidup, tenang, dan manusiawi.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-full text-sm">UX Thinking</span>
+        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-full text-sm">Minimal Design</span>
+      </div>
+    </div>
+  </div>
 
-section{
-padding:80px 10%;
-}
+  <h2 class="text-4xl font-bold mt-16 mb-8 border-b border-blue-500 pb-4">Tools & Teknologi Favorit</h2>
+  <!-- Bisa ditambah grid serupa kalau mau, atau list sederhana -->
+  <ul class="list-none space-y-6">
+    <li>
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">Frontend</h3>
+      <p class="text-gray-700 dark:text-gray-300">HTML CSS JavaScript – fondasi untuk membangun pengalaman yang tenang dan interaktif.</p>
+    </li>
+    <li>
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">Eksperimen AI</h3>
+      <p class="text-gray-700 dark:text-gray-300">Prompt Engineering, Chatbot Concept – AI sebagai teman diskusi dan refleksi.</p>
+    </li>
+    <li>
+      <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">Creative Exploration</h3>
+      <p class="text-gray-700 dark:text-gray-300">Menggabungkan tech dengan sisi personal dan reflektif.</p>
+    </li>
+  </ul>
 
-h1,h2{
-font-weight:600;
-}
+  <h2 class="text-4xl font-bold mt-16 mb-8 border-b border-blue-500 pb-4">Playground Eksperimen</h2>
+  <ul class="list-disc pl-6 space-y-4 text-lg text-gray-700 dark:text-gray-300">
+    <li><strong>AI Companion Prototype</strong> – Membuat AI yang terasa seperti teman diskusi.</li>
+    <li><strong>Personal Space Concept</strong> – Website sebagai ruang digital pribadi.</li>
+    <li><strong>UI Motion Study</strong> – Menguji animasi halus dan micro-interaction.</li>
+  </ul>
 
-/* HERO */
+  <div class="mt-16 p-8 bg-gray-100 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center">
+    <h2 class="text-3xl font-bold mb-6">Catatan Refleksi Teknologi</h2>
+    <p class="text-lg italic leading-relaxed">
+      Saya melihat teknologi bukan hanya alat produktivitas, tetapi medium untuk memahami cara manusia berinteraksi dengan dunia digital.<br>
+      Semakin dalam belajar teknologi, semakin saya melihat bahwa sistem juga mencerminkan pola pikir manusia.
+    </p>
+  </div>
 
-.hero{
-text-align:center;
-max-width:700px;
-margin:auto;
-}
-
-.hero p{
-opacity:0.7;
-margin-top:15px;
-}
-
-/* GRID */
-
-.tech-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:35px;
-}
-
-.card{
-background:#171a22;
-padding:25px;
-border-radius:15px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-background:#1f2430;
-}
-
-/* STACK TAG */
-
-.stack{
-display:inline-block;
-font-size:12px;
-padding:4px 10px;
-background:#2e3440;
-border-radius:8px;
-margin-top:12px;
-margin-right:6px;
-opacity:0.8;
-}
-
-/* NOTE */
-
-.note{
-max-width:700px;
-margin:auto;
-text-align:center;
-opacity:0.8;
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="hero">
-<h1>Ruang Teknologi</h1>
-<p>
-Tempat saya mengeksplorasi ide, memahami sistem, dan mencatat perjalanan belajar teknologi.
-Bukan sekadar belajar… tapi mencoba memahami bagaimana teknologi membentuk cara manusia berpikir.
-</p>
-</section>
-
-<!-- EXPLORATION AREA -->
-<section>
-<h2>Area Eksplorasi</h2>
-
-<div class="tech-grid">
-
-<div class="card">
-<h3>Web Development</h3>
-<p>Membangun ruang digital personal, UI reflektif, dan eksperimen interaksi manusia dengan website.</p>
-
-<span class="stack">HTML</span>
-<span class="stack">CSS</span>
-<span class="stack">JavaScript</span>
-</div>
-
-<div class="card">
-<h3>Artificial Intelligence</h3>
-<p>Mengeksplorasi AI sebagai companion digital dan alat refleksi pemikiran.</p>
-
-<span class="stack">AI Concept</span>
-<span class="stack">Automation</span>
-</div>
-
-<div class="card">
-<h3>UI & Interaction Design</h3>
-<p>Mencoba menciptakan desain yang terasa hidup, tenang, dan manusiawi.</p>
-
-<span class="stack">UX Thinking</span>
-<span class="stack">Minimal Design</span>
-</div>
-
-</div>
-</section>
-
-<!-- TECH STACK -->
-<section>
-<h2>Tools & Teknologi Favorit</h2>
-
-<div class="tech-grid">
-
-<div class="card">
-<h3>Frontend</h3>
-<p>Teknologi yang sering saya gunakan untuk membangun tampilan dan pengalaman pengguna.</p>
-
-<span class="stack">HTML</span>
-<span class="stack">CSS</span>
-<span class="stack">JavaScript</span>
-</div>
-
-<div class="card">
-<h3>Eksperimen AI</h3>
-<p>Menjelajahi bagaimana AI bisa menjadi ruang dialog dan eksplorasi ide.</p>
-
-<span class="stack">Prompt Engineering</span>
-<span class="stack">Chatbot Concept</span>
-</div>
-
-<div class="card">
-<h3>Creative Exploration</h3>
-<p>Mencoba menggabungkan teknologi dengan sisi reflektif dan personal.</p>
-
-<span class="stack">Digital Space</span>
-<span class="stack">Interactive Design</span>
-</div>
-
-</div>
-</section>
-
-<!-- PLAYGROUND -->
-<section>
-<h2>Playground Eksperimen</h2>
-
-<div class="tech-grid">
-
-<div class="card">
-<h3>AI Companion Prototype</h3>
-<p>Eksperimen membuat AI yang terasa seperti teman diskusi.</p>
-</div>
-
-<div class="card">
-<h3>Personal Space Concept</h3>
-<p>Membangun website sebagai ruang digital pribadi.</p>
-</div>
-
-<div class="card">
-<h3>UI Motion Study</h3>
-<p>Menguji animasi halus dan micro-interaction.</p>
-</div>
-
-</div>
-</section>
-
-<!-- REFLECTION -->
-<section class="note">
-<h2>Catatan Refleksi Teknologi</h2>
-<p>
-Saya melihat teknologi bukan hanya alat produktivitas,
-tetapi medium untuk memahami cara manusia berinteraksi dengan dunia digital.
-Semakin dalam belajar teknologi, semakin saya melihat bahwa sistem juga mencerminkan pola pikir manusia.
-</p>
-</section>
-
-</body>
-                          </html>
+  <p class="text-center mt-12 text-gray-500 dark:text-gray-400 italic">
+    Updated: Maret 2026 • Masih eksplorasi terus...
+  </p>
+</article>
